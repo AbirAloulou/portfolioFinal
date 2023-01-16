@@ -1,0 +1,385 @@
+body{
+    background-color: #F5F6F7;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0%;
+    padding: 0%;
+}
+*{
+    scroll-behavior: smooth;
+}
+/* header  */
+header{
+    padding-left: 76px;
+    padding-right: 76px;
+}
+#main-nav{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #BFB5B5;
+}
+#logo-Aa{
+    width: 70px;
+    height: 70px;
+    padding-right: 150px;
+}
+#nav-links{
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    justify-content: space-between;
+}
+
+.nav-item{
+    border-bottom: transparent 2px solid;
+}
+
+.current {
+    border-bottom: #FA633D 2px solid;
+}
+
+.nav-item:hover{
+    border-bottom: #FA633D 2px solid;
+    width: fit-content;
+
+}
+
+header nav a{
+    display: inline-block;
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+}
+/* Main */
+main{
+    padding-left: 135px;
+    padding-right: 135px;
+    padding-bottom: 50px;
+}
+#nav-social-media{
+    align-self: center;
+}
+main nav a{
+    display: inline-block;
+    color: #C1C1C1;
+    font-size: 25px;
+    padding-right: 45px;
+    text-decoration: none;
+}
+#My-Profile-Pic{
+    /* padding-top: 50px; */
+    width: 350px;
+    float: right;
+    position: relative;
+}
+#h1-1{
+    color: #FA633D;
+}
+#poste-title{
+    font-size: 75px;
+    font-weight: bold;
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+#p-2{
+    font-size: 20px;
+    color: #C1C1C1;
+    font-weight: lighter;
+}
+main p a{
+    font-size: 20px;
+    color: #C1C1C1;
+    scroll-behavior: smooth;
+}
+.mini-title{
+    color: black;
+    word-spacing: 15px;
+    letter-spacing: 10px;
+    border-top: #FA633D 3px solid;
+    width: fit-content;
+}
+
+.section-title{
+    padding-top: 70px;
+}
+
+#main-content{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+#main-content > div{
+    width: 50%;
+    font-size: 26px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.lead {
+    font-size: 36px;
+}
+
+.button-dark{
+    width: 100%;
+    background-color: black;
+    color: white;
+    font-size: 24px;
+    padding: 20px 0px;
+    text-decoration: none;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+}
+
+.button-dark:hover {
+    background-color: rgb(61, 61, 61);
+}
+
+.button-light{
+    width: 100%;
+    background-color: white;
+    color: black;
+    font-size: 24px;
+    padding: 20px 0px;
+    text-decoration: none;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+}
+
+.button-light:hover {
+    background-color: rgb(185, 185, 185);
+}
+
+#appytoons-link{
+    text-decoration: none;
+    font-size: 26px;
+    color: #FA633D;    
+}
+#appytoons-link:hover{
+    color: #fd3a09;
+}
+footer{
+    padding-left: 135px;
+    padding-right: 135px;
+    background-color: #C1C1C1;
+    padding-bottom: 50px;
+}
+
+.footer-bottom{
+    display: flex;
+    justify-content: space-around;
+    gap: 90px;
+}
+
+.footer-bottom > div > h4{
+    color: white;
+    word-spacing: 12px;
+    letter-spacing: 8px;
+    margin-bottom: 10px;
+}
+
+.footer-bottom > a {
+    color: black;
+}
+
+.socials-title{
+    align-content: flex-end;
+    color: black !important;
+}
+
+footer div p a{
+    color: white;
+    /* text-decoration: none; */
+}
+footer div nav a{
+    display: inline-block;
+    color: #F5F6F7;
+    font-size: 25px;
+    padding-right: 45px;
+    text-decoration: none;
+}
+/* --  */
+main div div.card-box{
+    background-color: white;
+    padding: 20px;
+    line-height: 1.6;
+    padding-bottom: 20px;
+}
+.date{
+    letter-spacing: 5px;
+}
+a.see-more{
+    color: #C1C1C1;
+    text-decoration: none;
+}
+a.see-more:hover{
+    color: #FA633D;
+}
+a.follow-us{
+    color: #C1C1C1;
+    text-decoration: none;
+    float: right;
+}
+a.follow-us:hover{
+    color: #FA633D;
+}
+div.card-object{
+    font-family: 'Times New Roman', Times, serif;
+}
+nav.sous-nav{
+    display: inline-block;
+    color: #C1C1C1;
+    font-size: 25px;
+    padding-right: 45px;
+    text-decoration: none;
+}
+li{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+div.pres>img{
+    width: 350px;
+    height: 250px;
+}
+div.memo-h>img{
+    height: 300px;
+    width: 250px;
+}
+div.memo-w>img{
+    height: 250px;
+    width: 350px;
+}
+div.illust-work>img{
+    height: 300px;
+    width: 300px;
+}
+.pres-logo{
+    width: 500px;
+    height: 500px;
+    position: relative;
+}
+.pres-content{
+    float: right;
+}
+.content{
+    padding: 0 10px;
+    display: inline block;
+}
+
+
+/* carrer page start */
+.section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.card-box {
+    border: 1px solid lightgray;
+}
+
+.card-box-language {
+    border: 1px solid lightgray;
+    width: fit-content;
+}
+
+.card-box-language > table {
+    padding: 20px;
+}
+
+tr, th, td {
+    padding: 10px;
+    border: 1px solid lightgray;
+}
+
+/* skill section */
+.skill-section {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 15px;
+}
+.skills:not(:last-child){
+    margin-bottom: 30px;
+}
+.details{
+    width: 100%;
+    display: flex;  
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.bar{
+    position: relative;
+ 
+    border: 2px solid black;
+ 
+    border-radius: 20px;
+  
+}
+.bar div{
+    position: relative;
+    width: 0;
+    height: 9px;
+    border-radius: 10px;
+    background-color: black;
+}
+#html-bar{
+    animation: html-fill 2s forwards;
+}
+@keyframes html-fill{
+    100%{
+        width: 90%;
+    }
+}
+#css-bar{
+    animation: css-fill 2s forwards;
+}
+@keyframes css-fill{
+    100%{
+        width: 75%;
+    }
+}
+#js-bar{
+    animation: js-fill 2s forwards;
+}
+@keyframes js-fill {
+    100%{
+        width: 72%;
+    }
+}
+
+/* appy toons section */
+.toons-header {
+    display: flex;
+    align-items: center;
+}
+
+.pres-content > h1{
+    font-size: 45px;
+
+}
+
+.pres-content > p{
+    font-size: 30px;
+}
+
+.mammy-content {
+    display: flex;
+    align-items: center;
+}
+
+.pres-content > h2{
+    font-size: 45px;
+}
+
+.work-with-appy > p{
+    font-size: 25px;
+}
+
+.work-with-appy > a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
