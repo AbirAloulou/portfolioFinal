@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="photos/logoAa.png" />
+    <title>Java Quiz</title>
+  </head>
+  <body>
+    <!--HEADER-->
+    <header>
+        <nav id="main-nav">
+          <div>
+            <img src="photos/logoAa.png" id="logo-Aa" alt="Logo" />
+          </div>
+          <div id="nav-links">
+            <a href="home.html" class="nav-item ">main()</a>
+            <a href="career.html" class="nav-item">Career</a>
+            <a href="capabilities.html" class="nav-item">Capabilities</a>
+            <a href="appytoons.html" class="nav-item">Appy Toons</a>
+            <a href="game.html" class="nav-item current">Game Zone</a>
+            <a href="#get-in-touch" class="nav-item">Say Hello</a>
+          </div>
+        </nav>
+      </header>
+    <div class="container">
+      <form id="quizForm" onsubmit="validate();return false;">
+        <h1 id="question"></h1>
+        <div id="answers"></div>
+        <br />
+        <button type="submit">Submit</button>
+      </form>
+      <p id="result"></p>
+    </div>
+    <footer>
+        <div id="get-in-touch" class="section-title">
+          <h3 class="mini-title">GET IN TOUCH</h3>
+        </div>
+        <div>
+          <p class="lead">
+            I'm happy to connect, listen and help. Let's work together and build
+            something awesome. Let's turn your idea to an even greater product.
+            <a href="mailto: abiraloulou5@gmail.com" target="_blank">Email Me</a>.
+          </p>
+        </div>
+        <div class="footer-bottom">
+          <div>
+            <h4 class="footer-title call-title">Call Me</h4>
+            <h3 href="tel:216-58-260-160">+216 58 260 160</h3>
+          </div>
+          <div class="socials">
+            <h4 class="footer-title socials-title">Social Media</h4>
+            <nav id="nav-social-media">
+              <a
+                href="https://www.facebook.com/profile.php?id=100010894248826"
+                target="_blank"
+                >Facebook</a
+              >
+              <a
+                href="https://www.instagram.com/call.me.appy/?hl=en"
+                target="_blank"
+                >Instagram</a
+              >
+              <a
+                href="https://www.linkedin.com/in/abir-aloulou-89949b1b1/"
+                target="_blank"
+                >LinkedIn</a
+              >
+              <a href="https://github.com/AbirAloulou" target="_blank">GitHub</a>
+            </nav>
+          </div>
+        </div>
+      </footer>
+    <script>
+      const questions = [
+        {
+          question: "What is the default value of a local variable in Java?",
+          answers: [
+            { text: "0", correct: false },
+            { text: "null", correct: false },
+            { text: "undefined", correct: false },
+            { text: "not assigned", correct: true },
+          ],
+        },
+        {
+          question: "What is the purpose of the final keyword in Java?",
+          answers: [
+            { text: "To make a variable constant", correct: true },
+            { text: "To make a class non-inheritable", correct: false },
+            { text: "To make a method non-overridable", correct: false },
+            { text: "All of the above", correct: false },
+          ],
+        },
+        {
+          question:
+            "What is the difference between a while loop and a do-while loop in Java?",
+          answers: [
+            {
+              text: "A while loop will always execute at least once, while a do-while loop may not execute at all.",
+              correct: true,
+            },
+            {
+              text: "A while loop may not execute at all, while a do-while loop will always execute at least once.",
+              correct: false,
+            },
+            {
+              text: "A while loop may not execute at all, while a do-while loop may not execute at all.",
+              correct: false,
+            },
+            {
+              text: "A while loop will always execute at least once, while a do-while loop will always execute at least once.",
+              correct: false,
+            },
+          ],
+        },
+        {
+          question: "How can you create a thread in Java?",
+          answers: [
+            { text: "By extending the Thread class", correct: true },
+            { text: "By implementing the Runnable interface", correct: true },
+            { text: "By extending the Runnable interface", correct: false },
+            { text: "By implementing the Thread class", correct: false },
+          ],
+        },
+        {
+          question:
+            "What is the difference between a public and private method in Java?",
+          answers: [
+            {
+              text: "A public method can be called from any class, while a private method can only be called from within the same class.",
+              correct: true,
+            },
+            {
+              text: "A public method can be called from any class, while a private method can be called from any class.",
+              correct: false,
+            },
+            {
+              text: "A public method can only be called from within the same class, while a private method can be called from any class.",
+              correct: false,
+            },
+            {
+              text: "A public method can only be called from within the same class, while a private method can only be called from within the same class.",
+              correct: false,
+            },
+          ],
+        },
+        {
+          question: "What is the purpose of the static keyword in Java?",
+          answers: [
+            { text: "To make a variable constant", correct: false },
+            {
+              text: "To make a method belong to the class rather than an object",
+              correct: false,
+            },
+            { text: "To make a class non-inheritable", correct: false },
+            {
+              text: "To make a variable accessible from any class",
+              correct: false,
+            },
+          ],
+        },
+      ];
+      const randomQuestions = createRandomArray(questions);
+      const question = document.getElementById("question");
+      const answers = document.getElementById("answers");
+      let currentQuestion = 0;
+      let score = 0;
+      displayQuestion();
+
+      function displayQuestion() {
+        const question = randomQuestions[currentQuestion];
+        const answers = createRandomArray(question.answers);
+        const answersHTML = answers
+          .map((answer) => {
+            return `<input type="radio" name="question${currentQuestion}" value="${answer.correct}" id="q${currentQuestion}${answer.text}" />
+                <label for="q${currentQuestion}${answer.text}">${answer.text}</label>
+                <br />`;
+          })
+          .join("");
+        document.getElementById("question").innerHTML = question.question;
+        document.getElementById("answers").innerHTML = answersHTML;
+      }
+
+      function validate() {
+        const answer = document.querySelector(
+          `input[name="question${currentQuestion}"]:checked`
+        );
+        if (answer && answer.value === "true") {
+          score++;
+        }
+        currentQuestion++;
+        if (currentQuestion < randomQuestions.length) {
+          displayQuestion();
+        } else {
+          document.getElementById(
+            "result"
+          ).innerHTML = `You got ${score} out of ${randomQuestions.length} correct.`;
+        }
+      }
+
+      function createRandomArray(originalArray) {
+        let arrayCopy = [...originalArray];
+        const randomArray = [];
+        while (arrayCopy.length > 0) {
+          const randomIndex = Math.floor(Math.random() * arrayCopy.length);
+          randomArray.push(arrayCopy[randomIndex]);
+          arrayCopy.splice(randomIndex, 1);
+        }
+        return randomArray;
+      }
+    </script>
+  </body>
+</html>
